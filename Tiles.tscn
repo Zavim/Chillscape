@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/block.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/stair.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 0.997091, 2, 1, -1, 2, 1, 0.997091, 2, -1, -1, 2, -1, -1, 0, -1, -1, 2, -1, -1, 0, 1, -1, 2, 1, 1, 2, 1, 1, 2, -1, 0.963989, 1.96416, -1, 0.997091, 2, -1, 0.955928, 1.95614, -1, -1, 0, -1, -1, 2, -1, 0.963988, 1.96416, 1, 0.997091, 2, 1, 1, 2, 1, 0.95458, 1.95749, 1, 0.963988, 1.96416, 1, 0.955927, 1.95614, 1, 0.395495, 1.39841, 1, 0.95458, 1.95749, 1, 0.395495, 1.39841, 1, 0.963988, 1.96416, 1, 0.395495, 1.39841, 1, -0.120594, 2, 1, -1, 2, 1, -1, 0.002914, 1, -0.970626, 0.032287, 1, -0.970626, 0.032287, 1, 0.395495, 1.39841, 1, -0.472317, 0.530597, 1, -0.472317, 0.530597, 1, 0.395495, 1.39841, 1, -0.227394, 0.77552, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="block" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.882447, 0.15435, -5.67552 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="block"]
+
+[node name="CollisionShape" type="CollisionShape" parent="block/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="stair" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14563, 0.27867, -5.72609 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="stair"]
+
+[node name="CollisionShape" type="CollisionShape" parent="stair/StaticBody"]
+shape = SubResource( 2 )
