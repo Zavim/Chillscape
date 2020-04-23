@@ -12,14 +12,10 @@ var jump = false
 func cartesian_to_isometric(vector):
 	return Vector2(vector.x - vector.y, vector.x + vector.y)
 
-func _physics_process(delta : float) -> void:
-	# if is_on_floor():
-	# 	velocity.y = 0
+func _physics_process(delta : float) -> void: 	
 	velocity += gravity * delta
 	get_input()
 	velocity = move_and_slide_with_snap(velocity, Vector3(0, velocity.y , 0), Vector3.UP, true)
-	# velocity = move_and_slide(velocity, Vector3.UP)
-	print(velocity.y)
 
 func get_input():
 	var vy = velocity.y
