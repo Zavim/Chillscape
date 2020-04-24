@@ -36,3 +36,6 @@ transform = Transform( 2.5, -4.65672e-08, 1.49012e-06, 4.65661e-08, 2.5, 1.86264
 projection = 1
 current = true
 size = 20.0
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
