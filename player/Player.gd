@@ -20,12 +20,12 @@ func _physics_process(delta : float) -> void:
 func get_input():
 	var vy = velocity.y
 	velocity = Vector3()
-	if $RayCast.is_colliding():
-		var direction := Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up"))
-		motion = cartesian_to_isometric(direction).normalized()
-		print($RayCast.is_colliding())
+#	if $RayCast.is_colliding():
+	var direction := Vector2(
+	Input.get_action_strength("right") - Input.get_action_strength("left"),
+	Input.get_action_strength("down") - Input.get_action_strength("up"))
+	motion = cartesian_to_isometric(direction).normalized()
+#		print($RayCast.is_colliding())
 
 	velocity = Vector3(
 		motion.x * speed,
